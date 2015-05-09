@@ -1,0 +1,18 @@
+{
+    "longName": "Fall Detection",
+    "watchapp": {
+        "watchface": false
+    },
+    "companyName": "hitheshaum@gmail.com",
+    "shortName": "Fall Detection",
+    "capabilities": [
+        ""
+    ],
+    "uuid": "5ed10362-a625-41e6-b35c-e6b10feb71e6",
+    "resources": {
+        "media": []
+    },
+    "versionLabel": "1.0",
+    "appKeys": {},
+    "versionCode": 1
+}
