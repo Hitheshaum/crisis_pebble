@@ -35,6 +35,7 @@ static void out_failed_handler(DictionaryIterator *failed, AppMessageResult reas
 }
 
 static void in_received_handler(DictionaryIterator *received, void *context) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "data received");
   Tuple *tuple = dict_find(received, 0);
   uint8_t multiplier= tuple->value->uint8;
   TRESHOLD= 20000000+(multiplier*100000);
@@ -50,7 +51,7 @@ static void in_dropped_handler(AppMessageResult reason, void *context) {
 
   
 static void accel_data_handler(AccelData *data, uint32_t num_samples){
-  //APP_LOG(APP_LOG_LEVEL_DEBUG, "acceleration read");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "a %d",1);
   accel_buffer[position]=(((data->x)*(data->x))+((data->y)*(data->y))+((data->z)*(data->z)));
   uint32_t minimum;
   uint32_t maximum;
@@ -205,7 +206,7 @@ static void window_unload(Window *window) {
 
 static void window_appear(Window *window){
   accel_data_service_subscribe(1, &accel_data_handler);
-  accel_service_set_sampling_rate(ACCEL_SAMPLING_100HZ);
+  accel_service_set_sampling_rate(ACCEL_SAMPLING_50HZ);
   //APP_LOG(APP_LOG_LEVEL_DEBUG, "accel subscribed");
   tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
   handle_minute_tick(NULL, MINUTE_UNIT);
