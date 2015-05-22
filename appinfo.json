@@ -4,16 +4,16 @@
         ""
     ],
     "companyName": "hitheshaum@gmail.com",
-    "longName": "Fall Detection",
+    "longName": "Crisis",
     "projectType": "native",
     "resources": {
         "media": []
     },
     "sdkVersion": "2",
-    "shortName": "Fall Detection",
+    "shortName": "Crisis",
     "uuid": "5ed10362-a625-41e6-b35c-e6b10feb71e6",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": false
     }
